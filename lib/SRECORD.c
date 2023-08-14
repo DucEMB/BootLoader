@@ -19,7 +19,7 @@ uint8 Strlen(uint8 array[])
     }
     return cnt;
 }
-
+/*brief*/
 char HexToDec(uint8 data)
 {       
     char result;
