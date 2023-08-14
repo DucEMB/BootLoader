@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>5</fileVersion>
+    <fileChecksum>2161291077</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\FLASH.h</file>
+            <file>$PROJ_DIR$\LIB.h</file>
+            <file>$PROJ_DIR$\QUEUE.c</file>
+            <file>$PROJ_DIR$\QUEUE.h</file>
+            <file>$PROJ_DIR$\SRECORD.c</file>
+            <file>$PROJ_DIR$\..\source\main.c</file>
+            <file>$PROJ_DIR$\..\MKL46Z\system_MKL46Z4.c</file>
+            <file>$PROJ_DIR$\CLOCK.c</file>
+            <file>$PROJ_DIR$\CLOCK.h</file>
+            <file>$PROJ_DIR$\FLASH.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\SYSTEM.o</file>
+            <file>$PROJ_DIR$\SRECORD.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\QUEUE.o</file>
+            <file>$PROJ_DIR$\SYSTEM.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup\system_MKL46Z4.o</file>
+            <file>$PROJ_DIR$\UART.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\CLOCK.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\UART.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\SRECORD.o</file>
+            <file>$PROJ_DIR$\UART.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\FLASH.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\main.o</file>
+            <file>$PROJ_DIR$\SYSTEM.c</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\QUEUE.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 12</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\SRECORD.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 18</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 21</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\MKL46Z\system_MKL46Z4.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 14</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\CLOCK.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 16</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\FLASH.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 20</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\UART.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 17</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\SYSTEM.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 10</file>
+                </tool>
+            </outputs>
+        </file>
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>
