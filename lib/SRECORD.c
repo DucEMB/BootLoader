@@ -19,7 +19,13 @@ uint8 Strlen(uint8 array[])
     }
     return cnt;
 }
-/*brief*/
+/************************** Brief *********************************************
+*
+    Input: string (array with char type)
+    Funtion return the length of the string
+**
+*******************************************************************************/
+
 char HexToDec(uint8 data)
 {       
     char result;
@@ -37,7 +43,13 @@ char HexToDec(uint8 data)
     }
     return result;
 }
-/*brief*/
+/************************** Brief *********************************************
+*
+    Input: a character
+    Funtion convert the data input from Hexa type to Decima type and return it 
+**
+*******************************************************************************/
+
 uint8 CheckSum(uint8 array[])
 {
     uint32 sum = 0;
@@ -53,6 +65,12 @@ uint8 CheckSum(uint8 array[])
     }
     return FALSE;
 }
+/************************** Brief *********************************************
+*
+    Input: string (array with char type)
+    Funtion check the checksum of a srecord-line and return True of False
+**
+*******************************************************************************/
 
 uint8 CheckByteCount(uint8 array[])
 {
@@ -70,6 +88,11 @@ uint8 CheckByteCount(uint8 array[])
     }
     return FALSE;
 }
+/************************** Brief *********************************************
+*   
+    Funtion check the number of byte in a srecord-line and return True of False 
+**
+*******************************************************************************/
 
 uint8 ParseLine(uint8 temp[])
 {
@@ -150,3 +173,13 @@ uint8 ParseLine(uint8 temp[])
     }
     return g_CompleteFlag;
 }
+/************************** Brief *********************************************
+*
+    Input: string (array with char type)
+    - Funtion parse a srecord-line and point out the address and data in this line
+    - After Parsing this line, The funtion call a funtion name "WriteFlash" to write
+    the data of the line into the Flash of MCU
+    - If reach the end of a srecord file, it call a funtion name "Backup" to back up
+    the program and return the flag that mean the boot is completed
+**
+*******************************************************************************/
