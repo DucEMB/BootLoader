@@ -23,7 +23,7 @@ void main()
     SystemCoreClockUpdate();
     if((GPIOC->PDIR & (1 << 3)) == 0)
     {
-        BootLoader(); /* gap nut nhan SW1 se vao chuong trinh boot */
+        BootLoader(); /* Run the Boot Promgram by Press Switch 1 */
     }
     while(1)
     {
