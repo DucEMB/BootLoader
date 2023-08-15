@@ -37,7 +37,7 @@ char HexToDec(uint8 data)
     }
     return result;
 }
-
+/*brief*/
 uint8 CheckSum(uint8 array[])
 {
     uint32 sum = 0;
