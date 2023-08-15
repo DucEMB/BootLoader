@@ -22,7 +22,7 @@ void initLed()
     PORTC->PCR[3]  |= PORT_PCR_MUX(1);
     PORTC->PCR[12]  |= PORT_PCR_MUX(1);
     
-    // set up ngat theo suon xuong
+    /* set up interrupt */
     PORTC->PCR[3]  |= PORT_PCR_IRQC(10);
     PORTC->PCR[3]  |=3;
     PORTC->PCR[12]  |=3;
@@ -36,11 +36,22 @@ void initLed()
     RED_LED_OFF;
     GREEN_LED_OFF;
 }
+/************************** Brief *********************************************
+*
+    Funtion configure the Led and Switch of the MCU to use
+**
+*******************************************************************************/
 
 void SetPC(uint32 PC)
 {
     __asm("BLX R0");
 }
+/************************** Brief *********************************************
+*
+    Input: The program Counter (unsigned long type)
+    Funtion used Assembly code to set the Boot Program jump into the Application
+**
+*******************************************************************************/
 
 void GetPC()
 {
@@ -50,6 +61,22 @@ void GetPC()
     PC = * AddressPC;
     SetPC(PC);
 }
+/************************** Brief *********************************************
+*
+    Funtion Get the Program counter of the Application and jump into the Application
+**
+*******************************************************************************/
+
+void SetMSP(uint32 MSP)
+{
+    __asm("MSR PSP, R0");
+}
+/************************** Brief *********************************************
+*
+    Input: The Main Stack Pointer (unsigned long type)
+    Funtion used Assembly code to set the PSP of the Boot Promgram as the Application MSP
+**
+*******************************************************************************/
 
 void GetMSP()
 {
@@ -59,6 +86,11 @@ void GetMSP()
     MSP = * AddressMSP;
     SetMSP(MSP);
 }
+/************************** Brief *********************************************
+*
+    Funtion Get the MSP of the Application and set it to the PSP of the Boot Program
+**
+*******************************************************************************/
 
 void Restore()
 {
@@ -74,6 +106,11 @@ void Restore()
         BackupBuffer += 4;
     }
 }
+/************************** Brief *********************************************
+*
+    Funtion used to restore the source of Application if the Boot is error
+**
+*******************************************************************************/
 
 void BackUp()
 {
@@ -92,11 +129,11 @@ void BackUp()
     TransmiteChar('\n');
     TransmiteChar('\r');
 }
-
-void SetMSP(uint32 MSP)
-{
-    __asm("MSR PSP, R0");
-}
+/************************** Brief *********************************************
+*
+    Funtion used Back Up the source of Application if the boot is completed
+**
+*******************************************************************************/
 
 void PushVectorTableToRam()
 {
@@ -112,3 +149,8 @@ void PushVectorTableToRam()
     SCB->VTOR = (uint32)g_VectorTable;
     __asm("CPSIE   I");
 }
+/************************** Brief *********************************************
+*
+    Funtion used Push th vector table to Ram to increase program perfomance
+**
+*******************************************************************************/

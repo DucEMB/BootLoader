@@ -67,7 +67,7 @@ uint8 CheckSum(uint8 array[])
 }
 /************************** Brief *********************************************
 *
-    Input: string (array with char type)
+    Input: a Srecord-line (array in unsigned char type)
     Funtion check the checksum of a srecord-line and return True of False
 **
 *******************************************************************************/
@@ -90,6 +90,7 @@ uint8 CheckByteCount(uint8 array[])
 }
 /************************** Brief *********************************************
 *   
+    Input: a Srecord-line (array in unsigned char type)
     Funtion check the number of byte in a srecord-line and return True of False 
 **
 *******************************************************************************/
@@ -175,7 +176,7 @@ uint8 ParseLine(uint8 temp[])
 }
 /************************** Brief *********************************************
 *
-    Input: string (array with char type)
+    Input: a Srecord-line (array in unsigned char type)
     - Funtion parse a srecord-line and point out the address and data in this line
     - After Parsing this line, The funtion call a funtion name "WriteFlash" to write
     the data of the line into the Flash of MCU

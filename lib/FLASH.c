@@ -15,6 +15,12 @@ void ClearFlash(uint32 address)
         while(FTFA->FSTAT != FTFA_FSTAT_CCIF_MASK);
     }
 }
+/************************** Brief *********************************************
+*
+    Input: Address want to clear in the Flash of MCU (unsigned long type)
+    Funtion used to clear a sector(512 Bytes) from the Address the user want to clear
+**
+*******************************************************************************/
 
 void WriteFlash(uint32 address,uint16 data[])
 {
@@ -36,6 +42,15 @@ void WriteFlash(uint32 address,uint16 data[])
         while(FTFA->FSTAT != FTFA_FSTAT_CCIF_MASK);
     }
 }
+/************************** Brief *********************************************
+*
+    Input:  +Address want to write data into the Flash of MCU (unsigned long type)
+            +Array contain the data that the user want to write into Flash(unsigned 
+            short type)
+    Funtion is used to write 4 byte data into the Flash of MCU from the address that
+    the user want to write
+**
+*******************************************************************************/
 
 void WriteFlash4Byte(uint32 address,uint32 data)
 {
@@ -57,3 +72,11 @@ void WriteFlash4Byte(uint32 address,uint32 data)
         while((FTFA->FSTAT & FTFA_FSTAT_CCIF_MASK) == 0);
     }
 }
+/************************** Brief *********************************************
+*
+    Input:  +Address want to write data into the Flash of MCU (unsigned long type)
+            +Data want to write into the Flash (unsigned long type)
+    Funtion is used to write 4 byte data into the Flash of MCU from the address that
+    the user want to write
+**
+*******************************************************************************/

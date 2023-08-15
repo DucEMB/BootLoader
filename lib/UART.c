@@ -47,6 +47,13 @@ void ConfigureBaudrate(uint32 Baudrate,uint32 ClockFrequency)
         UART0->BDH |= UART0_BDH_SBR((SystemSBR >> 8));
     }
 }
+/************************** Brief *********************************************
+*
+    Input:  +Baudrate (unsigned long type)
+            +Clock source of the UART module(System Core Clock / 2)
+    Funtion used to Configure the UART with the Baudrate that user want
+**
+*******************************************************************************/
 
 void ConfigureUART(uint32 Baudrate,uint32 Frequency)
 {
@@ -60,9 +67,16 @@ void ConfigureUART(uint32 Baudrate,uint32 Frequency)
     ConfigureBaudrate(Baudrate,Frequency);
     UART0->C2 |= UART0_C2_TE_MASK; /* Enable Transmitter */
     UART0->C2 |= UART0_C2_RE_MASK;
-    NVIC_EnableIRQ(UART0_IRQn);        /* Cho phép ngat UART0 */
-    UART0->C2 |= UART_C2_RIE_MASK;      /* Cho phep ngat nhan du lieu tu UART */
+    NVIC_EnableIRQ(UART0_IRQn);        /* Enable interrupt for UART0 */
+    UART0->C2 |= UART_C2_RIE_MASK;      /* Allow the interrupt receive data */
 }
+/************************** Brief *********************************************
+*
+    Input:  +Baudrate (unsigned long type)
+            +Clock source of the UART module(System Core Clock / 2)
+    Funtion used to Configure the UART with the Baudrate that user want
+**
+*******************************************************************************/
 
 void TransmiteString(uint8 a[])
 {
@@ -73,12 +87,22 @@ void TransmiteString(uint8 a[])
         i++;
     }
 }
+/************************** Brief *********************************************
+*
+    Funtion used to Transmite a string (array in unsigned char type)
+**
+*******************************************************************************/
 
 void TransmiteChar(uint8 a)
 {
     while((UART0->S1 & UART0_S1_TDRE_MASK) == 0);
     UART0->D = a;
 }
+/************************** Brief *********************************************
+*
+    Funtion used to Transmite a character
+**
+*******************************************************************************/
 
 void ConvertAndTransmite(uint32 LineCnt)
 {
@@ -100,3 +124,9 @@ void ConvertAndTransmite(uint32 LineCnt)
     TransmiteChar('\n');
     TransmiteChar('\r');
 }
+/************************** Brief *********************************************
+*
+    Input:  +data (unsigned long type)
+    Funtion used to convert and transmite a format number
+**
+*******************************************************************************/

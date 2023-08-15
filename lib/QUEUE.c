@@ -16,6 +16,11 @@ __ramfunc uint8 QueueIsFull()
     }
     return FALSE;
 }
+/************************** Brief *********************************************
+*
+    Funtion used to check the Quese if full and return True of False
+**
+*******************************************************************************/
 
 uint8 QueueIsEmpty()
 {
@@ -25,6 +30,11 @@ uint8 QueueIsEmpty()
     }
     return FALSE;
 }
+/************************** Brief *********************************************
+*
+    Funtion used to check the Quese if empty and return True of False
+**
+*******************************************************************************/
 
 __ramfunc void PushData(uint8 data)
 {
@@ -45,15 +55,31 @@ __ramfunc void PushData(uint8 data)
         cnt = 0;
     }    
 }
+/************************** Brief *********************************************
+*
+    Input: data want to push into Queue (unsigned char type)
+    Funtion used to push data into Queue
+**
+*******************************************************************************/
 
 DataType * GetAddress()
 {
     return &g_Queue.QueueElement[g_Front];
 }
+/************************** Brief *********************************************
+*
+    Funtion used get the address of the head of the Queue and return it to get the
+    data from it
+**
+*******************************************************************************/
 
 void FreeElement()
 {
     g_Front = (g_Front + 1) % MAX_SIZE;
     g_Queue.count--;
 }
-
+/************************** Brief *********************************************
+*
+    Funtion update the head of Queue after Getting the data from it
+**
+*******************************************************************************/
