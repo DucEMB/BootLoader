@@ -4,4 +4,4 @@
   Language: + C
             + Assembly
 
-  - The Program is used to update application or load source code of the Application into MCU by writing the Srecord file of this App
+  - The Program is used to update application or load source code of the Application into MCP(Micro Controller Processor) by writing the Srecord file of this App
