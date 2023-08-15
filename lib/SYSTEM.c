@@ -38,7 +38,7 @@ void initLed()
 }
 /************************** Brief *********************************************
 *
-    Funtion configure the Led and Switch of the MCU to use
+    Funtion configure the Led and Switch of the MCP to use
 **
 *******************************************************************************/
 
@@ -151,6 +151,6 @@ void PushVectorTableToRam()
 }
 /************************** Brief *********************************************
 *
-    Funtion used Push th vector table to Ram to increase program perfomance
+    Funtion used Push the vector table to Ram to increase program perfomance
 **
 *******************************************************************************/

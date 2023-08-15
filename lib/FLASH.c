@@ -17,7 +17,7 @@ void ClearFlash(uint32 address)
 }
 /************************** Brief *********************************************
 *
-    Input: Address want to clear in the Flash of MCU (unsigned long type)
+    Input: Address want to clear in the Flash of MCP (unsigned long type)
     Funtion used to clear a sector(512 Bytes) from the Address the user want to clear
 **
 *******************************************************************************/
@@ -44,10 +44,10 @@ void WriteFlash(uint32 address,uint16 data[])
 }
 /************************** Brief *********************************************
 *
-    Input:  +Address want to write data into the Flash of MCU (unsigned long type)
+    Input:  +Address want to write data into the Flash of MCP (unsigned long type)
             +Array contain the data that the user want to write into Flash(unsigned 
             short type)
-    Funtion is used to write 4 byte data into the Flash of MCU from the address that
+    Funtion is used to write 4 byte data into the Flash of MCP from the address that
     the user want to write
 **
 *******************************************************************************/
@@ -74,9 +74,9 @@ void WriteFlash4Byte(uint32 address,uint32 data)
 }
 /************************** Brief *********************************************
 *
-    Input:  +Address want to write data into the Flash of MCU (unsigned long type)
+    Input:  +Address want to write data into the Flash of MCP (unsigned long type)
             +Data want to write into the Flash (unsigned long type)
-    Funtion is used to write 4 byte data into the Flash of MCU from the address that
+    Funtion is used to write 4 byte data into the Flash of MCP from the address that
     the user want to write
 **
 *******************************************************************************/

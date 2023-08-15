@@ -179,7 +179,7 @@ uint8 ParseLine(uint8 temp[])
     Input: a Srecord-line (array in unsigned char type)
     - Funtion parse a srecord-line and point out the address and data in this line
     - After Parsing this line, The funtion call a funtion name "WriteFlash" to write
-    the data of the line into the Flash of MCU
+    the data of the line into the Flash of the MCP
     - If reach the end of a srecord file, it call a funtion name "Backup" to back up
     the program and return the flag that mean the boot is completed
 **
